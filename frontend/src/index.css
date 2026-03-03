@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface-900 text-slate-100 font-sans antialiased;
+    background-image:
+      radial-gradient(
+        ellipse at 20% 50%,
+        rgba(99, 102, 241, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 80% 20%,
+        rgba(139, 92, 246, 0.04) 0%,
+        transparent 50%
+      );
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-800;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-400 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-500;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-surface-800 active:scale-95;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-surface-600 hover:bg-surface-500 text-slate-200 text-sm font-medium rounded-lg transition-all duration-200 border border-surface-400 hover:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-surface-800 active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-2 text-slate-400 hover:text-slate-100 hover:bg-surface-700 text-sm font-medium rounded-lg transition-all duration-150 focus:outline-none;
+  }
+  .card {
+    @apply bg-surface-800 border border-surface-600 rounded-xl shadow-card;
+  }
+  .card-hover {
+    @apply card hover:border-brand-500/50 hover:shadow-glow transition-all duration-200 cursor-pointer;
+  }
+  .input {
+    @apply w-full px-3 py-2 bg-surface-700 border border-surface-500 rounded-lg text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-150;
+  }
+  .label {
+    @apply block text-sm font-medium text-slate-300 mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full;
+  }
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-400 hover:text-slate-100 hover:bg-surface-700 rounded-lg transition-all duration-150 cursor-pointer;
+  }
+  .sidebar-item-active {
+    @apply sidebar-item text-brand-400 bg-brand-900/30 border border-brand-500/20;
+  }
+  .section-title {
+    @apply text-xl font-semibold text-slate-100;
+  }
+  .section-subtitle {
+    @apply text-sm text-slate-400;
+  }
+  .stat-card {
+    @apply card p-5 flex flex-col gap-3;
+  }
+  .kanban-col {
+    @apply bg-surface-800 border border-surface-600 rounded-xl flex flex-col min-w-[300px] max-w-[300px];
+  }
+  .task-card {
+    @apply bg-surface-700 border border-surface-500 rounded-lg p-3 cursor-pointer hover:border-brand-500/50 transition-all duration-150 hover:shadow-glow;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply bg-surface-800/60 backdrop-blur-md border border-surface-600/50;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
