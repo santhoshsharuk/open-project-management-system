@@ -4,6 +4,12 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+### 🎬 Demo Video
+
+[![DevFlow Demo](https://img.youtube.com/vi/oGESWRfU_80/maxresdefault.jpg)](https://youtu.be/oGESWRfU_80)
+
+▶️ [Watch the full demo on YouTube](https://youtu.be/oGESWRfU_80)
+
 ---
 
 ## 🌟 Features
